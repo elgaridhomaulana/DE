@@ -13,12 +13,12 @@ class TestConvertToInt(object):
 
 class TestRowToList(object):
     # TESTING WELL: Boundary values
-    def test_on_no_tab_no_missing_value(self): # (0, 0) boundary value
+    def test_on_no_tab_no_missing_value(self):  # (0, 0) boundary value
         # Assign actual to the return value for the argument "123\n"
         actual = row_to_list("123\n")
         assert actual is None, f"Expected: None, Actual: {actual}"
 
-    def test_on_two_tabs_no_missing_value(self): # (2, 0) boundary value
+    def test_on_two_tabs_no_missing_value(self):  # (2, 0) boundary value
         # Assign actual to the return value for the argument "123\n"
         actual = row_to_list("123\t4,567\t89\n")
         # Complete the assert statement
@@ -35,7 +35,7 @@ class TestRowToList(object):
         actual = row_to_list('\n')
         # Write the assert statement with a failure message
         assert actual is None, "Expected: None, Actual: {0}".format(actual)
-        
+
     def test_on_two_tabs_with_missing_value(self):    # (2, 1) case
         # Assign to the actual return value for the argument "123\t\t89\n"
         actual = row_to_list("123\t\t89\n")
@@ -53,4 +53,4 @@ class TestRowToList(object):
         actual = row_to_list("1,059\t186,606\n")
         expected = ["1,059", "186,606"]
         # Write the assert statement along with a failure message
-        assert actual==expected, "Expected: {0}, Actual: {1}".format(expected, actual)
+        assert actual == expected, "Expected: {0}, Actual: {1}".format(expected, actual)

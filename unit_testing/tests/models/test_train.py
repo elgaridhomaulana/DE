@@ -2,6 +2,7 @@ from models.train import split_into_training_and_testing_sets
 import numpy as np
 import pytest
 
+
 # Declare the test class
 class TestSplitIntoTrainingAndTestingSets(object):
     # Fill in with the correct mandatory argument
@@ -11,7 +12,7 @@ class TestSplitIntoTrainingAndTestingSets(object):
             split_into_training_and_testing_sets(test_argument)
         expected_error_msg = "Argument data_array must have at least 2 rows, it actually has just 1"
         assert exc_info.match(expected_error_msg)
-    
+
     def test_on_six_rows(self):
         example_argument = np.array(
             [
@@ -29,12 +30,3 @@ class TestSplitIntoTrainingAndTestingSets(object):
             "The actual number of rows in the training array is not {}".format(expected_training_array_num_rows)
         assert actual[1].shape[0] == expected_testing_array_num_rows, \
             "The actual number of rows in the testing array is not {}".format(expected_testing_array_num_rows)
-    
-    def test_on_one_row(self):
-        test_argument = np.array([[1382.0, 390167.0]])
-        # Store information about raised ValueError in exc_info
-        with pytest.raises(ValueError) as exc_info:
-            split_into_training_and_testing_sets(test_argument)
-        expected_error_msg = "Argument data_array must have at least 2 rows, it actually has just 1"
-        # Check if the raised ValueError contains the correct message
-        assert exc_info.match(expected_error_msg)

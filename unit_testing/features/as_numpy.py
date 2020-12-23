@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def get_data_as_numpy_array(clean_data_file_path, num_columns):
     result = np.empty((0, num_columns))
     with open(clean_data_file_path, "r") as f:

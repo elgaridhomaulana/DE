@@ -2,6 +2,7 @@ from features.as_numpy import get_data_as_numpy_array
 import numpy as np
 import pytest
 
+
 class TestGetDataAsNumpyArray(object):
 
     def test_on_clean_file(self):

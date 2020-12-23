@@ -11,6 +11,7 @@ def convert_to_int(integer_string_with_commas):
     except ValueError:
         return None
 
+
 def row_to_list(row):
     row = row.rstrip("\n")
     separated_entries = row.split("\t")
