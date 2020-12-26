@@ -39,3 +39,8 @@ Ketika suatu fungsi terdapat dependensi terhadap fungsi lain. Kita ingin hanya m
 
 Package yang digunakan untuk mocking di pytest antara lain: <br>
 pytest-mock dan unittest.mock
+
+### Creating baseline for testing plot
+pytest --mpl-generate-path {{ path to baseline }} -k "test_plot_for_almost_linear_data"
+
+for testing use pytest --mpl
